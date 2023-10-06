@@ -2,7 +2,7 @@ const brush = document.querySelector('#brushItem')
 const eraser = document.querySelector('#eraserItem')
 const brushWidth = document.querySelector('#brush-width')
 const brushColor = document.querySelector('#color-picker')
-const brushText = brushColor.previousElementSibling // عنوان انتخاب‌کننده رنگ
+const brushText = brushColor.previousElementSibling
 const clearBtn = document.querySelector('#clearBtn')
 const saveBtn = document.querySelector('#saveBtn')
 const paintBoard = document.querySelector('#paint-board')
@@ -20,28 +20,27 @@ addEventListener('load',()=>{
   paintBoard.width = paintBoard.offsetWidth
   paintBoard.height = paintBoard.offsetHeight
   
-  // پس زمینه به رنگ سفید باشه تا موقع ذخیره کردن دردسر نشه
   ctx.fillStyle = 'white'
   fillRect()
 })
 
 paintBoard.addEventListener('mousedown',()=>{
   isDrowing = true
-  ctx.beginPath() // هربار نقطه شروع رو مبدا میگیره
+  ctx.beginPath()
   ctx.lineWidth = currentWidth
 })
 paintBoard.addEventListener("mousemove",(e)=>{
   if(!isDrowing) return
-  ctx.lineTo(e.offsetX , e.offsetY) // مختصات رو میگیره
-  ctx.strokeStyle = currenColor // تنظیم رنگ
-  ctx.stroke() // ترسیم میکنه
+  ctx.lineTo(e.offsetX , e.offsetY)
+  ctx.strokeStyle = currenColor
+  ctx.stroke()
 })
 paintBoard.addEventListener('mouseup',()=>{
   isDrowing = false
 })
 
 brush.addEventListener('click',()=>{
-  currenColor = brushColor.value // از ورودی مقدار رنگ رو میگیره
+  currenColor = brushColor.value
   brush.classList.add('activeTab')
   eraser.classList.remove('activeTab')
 })
@@ -55,7 +54,7 @@ brushColor.addEventListener('change',()=>{
 })
 
 eraser.addEventListener('click',()=>{
-  currenColor = "white" // رنگ پاک‌کن مسلما سفیده
+  currenColor = "white"
   eraser.classList.add('activeTab')
   brush.classList.remove('activeTab')
 })
