@@ -44,9 +44,6 @@ brush.addEventListener('click',()=>{
   brush.classList.add('activeTab')
   eraser.classList.remove('activeTab')
 })
-brushWidth.addEventListener('change',()=>{
-  currentWidth = brushWidth.value
-})
 
 brushColor.addEventListener('change',()=>{
   currenColor = brushColor.value
