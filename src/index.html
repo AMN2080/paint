@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <title>paint</title>
+</head>
+<body class="bg-blue-500 min-h-screen flex justify-center items-center px-5">
+  <div class="bg-white max-w-[1200px] rounded-xl overflow-hidden shadow-xl">
+    <div>
+      <div class="h-14 py-2.5 px-4 border-b-2 border-blue-500 flex justify-between items-center">
+        <div class="w-2/3 flex justify-evenly items-center">
+          <div id="eraserItem" class="cursor-pointer">
+            <i class="fa fa-eraser"></i>
+            <span class="hidden md:inline">eraser</span>
+          </div>
+          <div id="brushItem" class="activeTab cursor-pointer">
+            <i class="fa fa-paint-brush"></i>
+            <span class="hidden md:inline">brush</span>
+          </div>
+          <div class="flex items-center">
+            <label class="cursor-pointer" for="color-picker">
+              <i class="fa fa-palette"></i>
+              <span class="hidden lg:inline">choose color</span>
+            </label>
+            <input id="color-picker" class="w-5 border-none bg-transparent cursor-pointer" type="color">
+          </div>
+          <input id="brush-width" type="range" value="5" min="1" max="20">
+        </div>
+        <div class="space-x-3">
+          <button id="saveBtn" class="px-2 border-2 bg-blue-500 border-blue-500 rounded-md text-white hover:bg-transparent hover:text-blue-500">save</button>
+          <button id="clearBtn" class="px-2 border-2 bg-blue-500 border-blue-500 rounded-md text-white hover:bg-transparent hover:text-blue-500">clear</button>
+        </div>
+      </div>
+      <canvas id="paint-board" class="h-[600px] cursor-crosshair"></canvas>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
