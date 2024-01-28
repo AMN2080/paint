@@ -1,2 +1,3 @@
-# paint app
-a simple mini-project by tailwind and pure JS + responsive + save drawing
+a simple mini-project for practice 
+
+tailwind + pure JS + RWD + save drawing
